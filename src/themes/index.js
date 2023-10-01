@@ -8,7 +8,7 @@ import {
 
 const themes = {}
 
-const themeNames = ['reorx']
+const themeNames = ['reorx','wen']
 
 // https://vitejs.dev/guide/features.html#disabling-css-injection-into-the-page
 // note that `?raw` (https://vitejs.dev/guide/assets.html#importing-asset-as-string)
