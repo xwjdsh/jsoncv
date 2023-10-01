@@ -40,6 +40,12 @@ function formatLocation(loc) {
         <span><%= cv.basics.phone %></span>
       </div>
     <% } %>
+    <% if (cv.basics.github) { %>
+      <div class="item">
+        <%- fn.getIconSVG('mdi:github') %>
+        <span><a href="<%= cv.basics.github %>" target="_blank"><%= fn.noSchemaURL(cv.basics.github) %></a></span>
+      </div>
+    <% } %>
     <% if (cv.basics.location) { %>
       <div class="item">
         <%- fn.getIconSVG('mdi:location') %>
@@ -248,26 +254,6 @@ function dateRange(item, level) {
   </div>
 </section>
 <% } %>
-
-<!-- Languages -->
-<% if (cv.languages) { %>
-<section class="languages-section page-unit">
-  <div class="section-title">
-    <h2>Languages</h2>
-    <div class="line"></div>
-  </div>
-  <% for (const item of cv.languages) { %>
-    <div class="language section-item">
-      <h3><%= item.language %></h3>
-      <div class="fluency row subtitle"><%= item.fluency %></div>
-      <% if (item.summary) { %>
-        <div class="summary p"><%- fn.renderMarkdown(item.summary) %></div>
-      <% } %>
-    </div>
-  <% } %>
-</section>
-<% } %>
-
 
 <!-- TODO: -->
 <!-- Awards -->
