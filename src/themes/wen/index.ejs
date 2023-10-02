@@ -224,6 +224,20 @@ function dateRange(item, level) {
     </div>
   <% } %>
   </div>
+  <div class="sideproject section-item">
+    <div class="space-between">
+      <h3><%= cv.sideProjectsEnd.name %></h3>
+    </div>
+    <div class="description"><%- fn.renderMarkdown(cv.sideProjectsEnd.description) %></div>
+    <% if (cv.sideProjectsEnd.url) { %>
+      <% for (const url of cv.sideProjectsEnd.url.split(" ")) { %>
+      <div class="url row">
+        <%- fn.getIconSVG('mdi:link-variant') %>
+        <a href="<%=url %>" target="_blank"><%= fn.noSchemaURL(url) %></a>
+      </div>
+      <% } %>
+    <% } %>
+  </div>
 </section>
 <% } %>
 
